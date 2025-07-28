@@ -39,6 +39,18 @@ fi
 
 echo "✅ Docker image built successfully!"
 
+# Test the Docker setup
+echo "🧪 Testing Docker setup..."
+docker run --rm challenge1b python test_docker_setup.py
+
+# Check if test was successful
+if [ $? -ne 0 ]; then
+    echo "❌ Docker test failed! Check the error messages above."
+    exit 1
+fi
+
+echo "✅ Docker setup test passed!"
+
 # Run the container
 echo "🚀 Running Challenge 1B..."
 echo

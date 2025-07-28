@@ -9,7 +9,6 @@ from section_ranker import SectionRanker
 import glob
 
 # Set deterministic settings for reproducibility
-torch.set_deterministic(True)
 torch.manual_seed(42)
 np.random.seed(42)
 

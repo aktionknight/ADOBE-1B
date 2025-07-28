@@ -4,7 +4,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 import torch
 
 # Set deterministic settings for reproducibility
-torch.set_deterministic(True)
 torch.manual_seed(42)
 np.random.seed(42)
 
@@ -15,7 +14,6 @@ class SectionRanker:
         Using a lightweight model to meet the 1GB size constraint.
         """
         # Set deterministic settings before model loading
-        torch.set_deterministic(True)
         torch.manual_seed(42)
         
         # Set model to deterministic mode

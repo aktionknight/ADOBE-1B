@@ -40,6 +40,19 @@ if %errorlevel% neq 0 (
 
 echo ✅ Docker image built successfully!
 
+REM Test the Docker setup
+echo 🧪 Testing Docker setup...
+docker run --rm challenge1b python test_docker_setup.py
+
+REM Check if test was successful
+if %errorlevel% neq 0 (
+    echo ❌ Docker test failed! Check the error messages above.
+    pause
+    exit /b 1
+)
+
+echo ✅ Docker setup test passed!
+
 REM Run the container
 echo 🚀 Running Challenge 1B...
 echo.
